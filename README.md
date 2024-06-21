@@ -33,7 +33,7 @@ SQLITE_STORAGE=/data/database.sqlite
 ## Getting Started
 1. Clone the repostiory
 ```bash
-git clone https://github.com/clim-bot/auth-backend-node.git
+git clone https://github.com/clim-bot/auth-backend-nest.git
 cd auth-backend-node
 ```
 
