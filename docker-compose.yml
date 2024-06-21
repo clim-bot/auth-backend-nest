@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - JWT_SECRET=yourjwtsecret
+      - CLIENT_URL=http://localhost:3000
+      - SMTP_HOST=mailhog
+      - SMTP_PORT=1025
+      - SQLITE_STORAGE=/data/database.sqlite
+      - EMAIL_USER=
+      - EMAIL_PASS=
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+      - ./data:/data
+    depends_on:
+      - mailhog
+
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "1025:1025"
+      - "8025:8025"
